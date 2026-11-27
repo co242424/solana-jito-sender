@@ -6,6 +6,8 @@ Minimal TypeScript example for landing a **single** Solana transaction through t
 
 Jito Block Engine로 트랜잭션 하나를 보내는 TypeScript 예제입니다. UUID 인증(`x-jito-auth` / `?uuid=`)과 `sendTransaction`만 다룹니다. 번들 경매용 멀티 트랜잭션이나 멀티 지갑 로직은 없습니다.
 
+메인넷 실제 전송 결과는 위 Mainnet test results 표 참고.
+
 ## What it does
 
 1. Loads a local keypair from `KEYPAIR_PATH`
@@ -56,6 +58,24 @@ Official references from the Jito low-latency send docs:
 - Never commit a private key, seed phrase, `.env` file, or UUID. `.gitignore` already ignores `.env` and `*.json` keypair files (`package.json`, `package-lock.json`, and `tsconfig.json` are kept).
 - Never paste a private key, seed phrase, or UUID into Discord, git, or chat.
 - This example only sends a memo + tip from one wallet. It is not a launch, snipe, or bundle tool.
+
+## Mainnet test results (2026-11-27)
+
+Sent with `npm run send` through the Tokyo block engine (`https://tokyo.mainnet.block-engine.jito.wtf`), default unauthenticated rate limit, from a burner test wallet. Each transaction includes a Jito tip transfer (1000 lamports) to a tip account returned by `getTipAccounts`. All landed and finalized with no errors.
+
+| # | Signature |
+|---|---|
+| 1 | [49TzZArZ...](https://solscan.io/tx/49TzZArZcz43caydWPMQnwVQ5KxApWPZTnBhU26FgxPv4J4esH9t8ZymKgEfY3HBpYPKMLpvP1Gv11hKdYcQeweq) |
+| 2 | [kW9wV5gL...](https://solscan.io/tx/kW9wV5gL2ecimnKHGRNLAHxYR1sS5cXiTn8zaG5YqL3dANcQuN6NdaC8rhWP7RNj2dy1ohs9Hd9hmE6RsLMW8bh) |
+| 3 | [2imutN8h...](https://solscan.io/tx/2imutN8hdrJx4DSwrsVpbjjBjKNdo4K8j8CiUeAkPs2r3R4AuYms1pWWVg6x4tm6mzGXmm6uNB2D2SHoc54bgYr2) |
+| 4 | [BDEPH3gT...](https://solscan.io/tx/BDEPH3gTxsmJrKQ3hZ79n9YUKRMCgCEpzdoSZgSLhYbEtDNgdpphcwWR6GCN9QHXLJCzqfmRXuNGVrfEALQ9jkN) |
+| 5 | [DKPNeX24...](https://solscan.io/tx/DKPNeX24JnAN8KjVfqRCHyjxsg7qmkePv6ouMdGA8eLAuuN9d58Jq2DBp9mF2w5ptLbe23FDyFvT7Zsv2Sb8Exd) |
+| 6 | [svRDXkzz...](https://solscan.io/tx/svRDXkzzEhpvL2SJ5uhexpJKTwahTqV35LN8kPySk4Lfy1yPPA7Adhpo44ghMsznBhSezb8t2egL8x5KD6z1gSo) |
+| 7 | [5aBG92C7...](https://solscan.io/tx/5aBG92C7Wr2wLStrYdXBuWe4DqsaZ9LtSGeS2k68Azicvtc8DhsS7AZC8V7oRj4jZbZBGsrGHVa66gCk2xudHwum) |
+
+Test wallet history: https://solscan.io/account/6Vpc8MS89KkXBjgHipwsMkzXy1zy76BpXBahWjuF58LB
+
+Next step: request a Jito UUID for higher rate limits (`JITO_UUID` in `.env`).
 
 ## License
 
