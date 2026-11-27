@@ -2,12 +2,6 @@
 
 Minimal TypeScript example for landing a **single** Solana transaction through the [Jito Block Engine](https://docs.jito.wtf/lowlatencytxnsend/) JSON-RPC API. It covers optional UUID auth, tip account selection, a priority fee, and confirmation on a regular Solana RPC.
 
-## 한국어
-
-Jito Block Engine로 트랜잭션 하나를 보내는 TypeScript 예제입니다. UUID 인증(`x-jito-auth` / `?uuid=`)과 `sendTransaction`만 다룹니다. 번들 경매용 멀티 트랜잭션이나 멀티 지갑 로직은 없습니다.
-
-메인넷 실제 전송 결과는 위 Mainnet test results 표 참고.
-
 ## What it does
 
 1. Loads a local keypair from `KEYPAIR_PATH`
