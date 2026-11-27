@@ -1,0 +1,32 @@
+{
+  "name": "solana-jito-sender",
+  "version": "1.0.0",
+  "description": "Single-transaction landing example via Jito Block Engine JSON-RPC",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "check": "tsc --noEmit",
+    "send": "node --import tsx src/send.ts"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.98.4",
+    "bs58": "^6.0.0",
+    "dotenv": "^16.6.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.25",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/co242424/solana-jito-sender.git"
+  },
+  "bugs": {
+    "url": "https://github.com/co242424/solana-jito-sender/issues"
+  },
+  "homepage": "https://github.com/co242424/solana-jito-sender#readme"
+}
